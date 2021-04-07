@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Manufacturer(models.Model):
-    name = models.CharField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=100,primary_key=True)
     #id=models.IntegerField(primary_key=True)
     class Meta:
         db_table="manufacturer"
@@ -13,7 +13,7 @@ class Manufacturer(models.Model):
 
 class Car(models.Model):
     manufacturer = models.ForeignKey(Manufacturer,on_delete=models.CASCADE,)
-    car_name = models.CharField(max_length=30, primary_key=True)
+    #car_name = models.CharField(max_length=30, primary_key=True)
 
     # ...
     SPORTS = 'SP'
@@ -37,7 +37,7 @@ class Car(models.Model):
     ]
 
 
-    car_name = models.CharField('車名',max_length=60, primary_key=True)
+    car_name = models.CharField('車名',max_length=60,)
     car_menu = models.CharField('タイプ',max_length=3, choices=car_menu,)
     car_drive = models.CharField('駆動方式',max_length=6, choices=car_drive,)
 
