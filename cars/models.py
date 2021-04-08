@@ -36,6 +36,11 @@ class Car(models.Model):
     ('ミッドシップ','MR'),
     ]
 
+    picture = models.ImageField(upload_to='images/')
+    title = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.title
 
     car_name = models.CharField('車名',max_length=60,)
     car_menu = models.CharField('タイプ',max_length=3, choices=car_menu,)
@@ -43,6 +48,7 @@ class Car(models.Model):
 
     def __str__(self):
         return self.car_name
+
 
 class Register(models.Model):
 
