@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.views.generic import base
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('cars/', include('cars.urls')),
     path('admin/', admin.site.urls),
-] 
+    path('accounts/login/', base.RedirectView.as_view(pattern_name="cars:login")),
+    path('accounts/profile/', base.RedirectView.as_view(pattern_name="cars:index")),
+] +  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

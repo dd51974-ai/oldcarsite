@@ -1,0 +1,7 @@
+<h1>Your Car</h1>
+
+{% for image in images %}
+    <img src='{{ MEDIA_URL }}{{image.picture}}' width=200>
+    <h2>{{ image.title }}</h2>
+{% endfor %}
+<h2><a href="{% url 'cars:upload' %}">Upload more</a></h2>
