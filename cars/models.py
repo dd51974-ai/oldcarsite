@@ -57,6 +57,19 @@ class Car(models.Model):
     ]
     color = models.CharField('カラー',max_length=15, choices=color,)
 
+
+
+
+    kanto_area = [
+    ('神奈川県','Kanagawa'),
+    ('東京都','Tokyo'),
+    ('埼玉県','Saitama'),
+    ('千葉県','Chiba'),
+    ('群馬県','Gunma'),
+    ('茨城県','Ibaraki'),
+    ]
+    kanto_area = models.CharField('関東地方',max_length=4, choices=kanto_area,)
+
     def __str__(self):
         return self.car_name
 
@@ -67,14 +80,7 @@ class Register(models.Model):
 
     shop1 = models.CharField(max_length=30, primary_key=True)
 
-    area1 = [
-    ('神奈川県','Kanagawa'),
-    ('東京都','Tokyo'),
-    ('埼玉県','Saitama'),
-    ('千葉県','Chiba'),
-    ('群馬県','Gunma'),
-    ('茨城県','Ibaraki'),
-    ]
+
 
 
 INSTALLED_APPS = [
