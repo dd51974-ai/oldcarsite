@@ -46,6 +46,16 @@ class Car(models.Model):
     car_name = models.CharField('車名',max_length=60,)
     car_menu = models.CharField('タイプ',max_length=3, choices=car_menu,)
     car_drive = models.CharField('駆動方式',max_length=6, choices=car_drive,)
+    color = [
+    ('Red','赤'),
+    ('Bleu','青'),
+    ('White','白'),
+    ('Black','黒'),
+    ('Yellow','黄'),
+    ('Green','緑'),
+    ('Decorated car','痛車'),
+    ]
+    color = models.CharField('カラー',max_length=15, choices=color,)
 
     def __str__(self):
         return self.car_name
@@ -53,15 +63,7 @@ class Car(models.Model):
 
 class Register(models.Model):
 
-    color = [
-    ('赤', 'Red'),
-    ('青','Bleu'),
-    ('白','White'),
-    ('黒','Black'),
-    ('黄','Yellow'),
-    ('緑','Green'),
-    ]
-    color = models.CharField('カラー',max_length=1, choices=color,)
+
 
     shop1 = models.CharField(max_length=30, primary_key=True)
 
