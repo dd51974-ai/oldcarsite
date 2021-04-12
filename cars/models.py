@@ -94,11 +94,11 @@ class Car(models.Model):
     def __str__(self):
         return self.car_name
 
-    def __str__(self):
-        return self.city
+    #def __str__(self):
+        #return self.city
 
-    def __str__(self):
-        return self.area
+    #def __str__(self):
+        #return self.area
 
 
 class Register(models.Model):
