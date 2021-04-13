@@ -4,4 +4,4 @@ from .models import Car
 class ImageForm(forms.ModelForm):
     class Meta:
         model = Car
-        fields = ['picture', 'named_picture']
+        fields = ['picture', 'vehicle_model','manufacturer','drive_system','color']

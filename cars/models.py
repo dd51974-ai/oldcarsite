@@ -32,7 +32,7 @@ class Car(models.Model):
 
     #画像を扱う
     picture = models.ImageField(upload_to='images/')
-    named_picture = models.CharField(max_length=200)
+    vehicle_model = models.CharField('車両型式',max_length=200)
 
     def __str__(self):
         return self.title
@@ -89,8 +89,6 @@ class Car(models.Model):
     color = models.CharField('車の色',max_length=15, choices=color,)
 
 
-
-
     kanto = [
     ('Kanagawa','神奈川県'),
     ('Tokyo','東京都'),
@@ -106,13 +104,6 @@ class Car(models.Model):
 
     def __str__(self):
         return self.car_name
-
-    #def __str__(self):
-        #return self.city
-
-    #def __str__(self):
-        #return self.area
-
 
 class Register(models.Model):
 
