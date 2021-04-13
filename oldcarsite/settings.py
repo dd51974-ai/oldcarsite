@@ -16,7 +16,8 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+# ... 追記部分 ...
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -123,8 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# ... 追記部分 ...
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # 画像を保存する先の指定
 MEDIA＿ROOT = os.path.join(BASE_DIR, 'media')
 

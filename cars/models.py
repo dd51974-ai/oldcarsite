@@ -2,7 +2,20 @@ from django.db import models
 
 # Create your models here.
 class Manufacturer(models.Model):
-    name = models.CharField(max_length=100,primary_key=True)
+    name = [
+    ('トヨタ','TOYOTA'),
+    ('レクサス','LEXUS'),
+    ('日産','NISSAN'),
+    ('ホンダ','HONDA'),
+    ('スバル','SUBARU'),
+    ('三菱','MITSUBISHI'),
+    ('マツダ','MAZDA'),
+    ('スズキ','SUZUKI'),
+    ('ダイハツ','DAIHATSU'),
+    ('光岡','MITSUOKA'),
+    ('いすゞ','ISUZU'),
+    ]
+    name = models.CharField(max_length=100,primary_key=True,choices=name,)
 
     class Meta:
         db_table="manufacturer"
@@ -19,7 +32,7 @@ class Car(models.Model):
 
     #画像を扱う
     picture = models.ImageField(upload_to='images/')
-    named_picture = models.CharField(max_length=200)
+    vehicle_model = models.CharField('車両型式',max_length=200)
 
     def __str__(self):
         return self.title
@@ -49,7 +62,7 @@ class Car(models.Model):
         ]
     car_drive = models.CharField('駆動方式',max_length=6, choices=car_drive,)
 
-    odometer1 = models.CharField('走行距離',max_length=6,)
+    odometer1 = models.CharField('走行距離',max_length=7,)
 
     odometer2 = [
     ('50,000_or_less','5万キロ未満'),
@@ -76,8 +89,6 @@ class Car(models.Model):
     color = models.CharField('車の色',max_length=15, choices=color,)
 
 
-
-
     kanto = [
     ('Kanagawa','神奈川県'),
     ('Tokyo','東京都'),
@@ -93,13 +104,6 @@ class Car(models.Model):
 
     def __str__(self):
         return self.car_name
-
-    #def __str__(self):
-        #return self.city
-
-    #def __str__(self):
-        #return self.area
-
 
 class Register(models.Model):
 
