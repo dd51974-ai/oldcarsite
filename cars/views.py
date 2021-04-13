@@ -6,6 +6,7 @@ def index(request):
     return HttpResponse("Hello,world. You're at the cars index.")
 
 from .models import Car
+#画像を表示するページ
 def showall(request):
     images = Car.objects.all()
     context = {'images':images}
